@@ -1368,7 +1368,7 @@ fin:
         
 End Sub
 
-Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******************************
+Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' MIGRADO *******************************
     Dim puesto As String
     Dim numero As String
     Dim cargado As String
@@ -1470,7 +1470,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
         
         connMySql.Execute (sql)
     End If
-       
+    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''   
     On Error GoTo errorPendientePuntos
     
     sql = "SELECT TABLE_NAME AS tipo From information_schema.TABLES " & _
@@ -1509,7 +1509,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
     End If
     
     rs.Close
-    
+    '#####################################################################################
     On Error GoTo errorPendientePuntos
     
     sql = "SELECT TOP 1 * FROM ClienteAux"
@@ -1523,7 +1523,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
     Next
     
     rs.Close
-    
+    '##################################################################################
     On Error GoTo errorPendientePuntos
     
     sql = "SELECT data_type AS tipo " & _
@@ -1545,7 +1545,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
     End If
     
     rs.Close
-    
+    '################################################################################
     On Error GoTo errorPendientePuntos
     
     sql = "SELECT * FROM pendiente_puntos ORDER BY idventa DESC LIMIT 0,1"
@@ -1559,7 +1559,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
     End If
 
     rs.Close
-
+	'###################################################################################
     On Error GoTo errorPendientePuntos
         
     sql = "SELECT * FROM venta WHERE ejercicio >= 2015 AND IdVenta >= " & venta & " ORDER BY IdVenta ASC"
@@ -1824,9 +1824,9 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
             rs5.Close
             
         Else
-            dni = 0
+            dni = 0 '###### no se usa
         End If
-        
+        '#######################################################################################################
         id_vendedor = rs!XVend_IdVendedor
             
         On Error GoTo errorPendientePuntos
@@ -1882,7 +1882,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
             dtoLinea = Replace(rs2!DescuentoLinea, ",", ".")
             
             On Error GoTo errorPendientePuntos
-            
+            '####################################################################################################
             sql = "SELECT * FROM LineaVentaReden WHERE IdVenta = " & rs2!IdVenta & " AND IdNLinea = " & rs2!idnlinea
 
             rs3.Open sql, connSqlServer, adOpenDynamic, adLockBatchOptimistic
@@ -1893,7 +1893,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
             End If
             
             rs3.Close
-    
+			'##############################################################
             On Error GoTo errorPendientePuntos
             
             sql = "SELECT * FROM articu WHERE IdArticu='" & rs2!codigo & "'"
@@ -1971,7 +1971,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
                 End If
                 
                 On Error GoTo errorPendientePuntos
-                
+                '##################################################################################################
                 sql = "SELECT * FROM Proveedor WHERE IDProveedor = '" & rs3!proveedorHabitual & "'"
                
                 rs4.Open sql, connSqlServer, adOpenDynamic, adLockBatchOptimistic
@@ -2014,7 +2014,7 @@ Private Sub Timer_Pendiente_Puntos_Timer() ''''''''''''''''''''' CURRENT *******
                     nombreLaboratorio = "<Sin Laboratorio>"
                 End If
             End If
-    
+			'################################################################################################################
             On Error GoTo errorPendientePuntos
             
             sql = "SELECT * FROM pendiente_puntos WHERE IdVenta='" & rs2!IdVenta & "' AND Idnlinea= '" & rs2!idnlinea & "'"
@@ -2131,7 +2131,7 @@ fin:
 
 End Sub
 
-Private Sub Timer_Control_Stock_Fechas_Entrada_Timer()
+Private Sub Timer_Control_Stock_Fechas_Entrada_Timer() ''''''''''''''''''''''' CURRENT ''''''''''''''''''''''''''''''''''''
     Dim precio As String
     Dim pcoste As String
     Dim pvpsiva As String
