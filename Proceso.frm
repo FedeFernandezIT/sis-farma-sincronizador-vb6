@@ -2131,7 +2131,7 @@ fin:
 
 End Sub
 
-Private Sub Timer_Control_Stock_Fechas_Entrada_Timer() ''''''''''''''''''''''' CURRENT ''''''''''''''''''''''''''''''''''''
+Private Sub Timer_Control_Stock_Fechas_Entrada_Timer() ''''''''''''''''''''''' MIGRADO ''''''''''''''''''''''''''''''''''''
     Dim precio As String
     Dim pcoste As String
     Dim pvpsiva As String
@@ -2390,7 +2390,8 @@ Private Sub Timer_Control_Stock_Fechas_Entrada_Timer() ''''''''''''''''''''''' C
             fechaCaducidad = ""
         End If
                        
-        If rs2.EOF Then
+        ''' rs medicamentos '''''''''''''''
+		If rs2.EOF Then
             On Error GoTo errorControlStock
         
             sql = "INSERT INTO medicamentos " & "(cod_barras,cod_nacional,nombre,superFamilia,familia,precio,descripcion,laboratorio,nombre_laboratorio,proveedor,pvpSinIva,iva,stock,puc,stockMinimo,stockMaximo,presentacion,descripcionTienda,activoPrestashop,actualizadoPS,fechaCaducidad,fechaUltimaCompra,fechaUltimaVenta,baja) " & _
@@ -2459,7 +2460,7 @@ fin:
     
 End Sub
 
-Private Sub Timer_Control_Stock_Fechas_Salida_Timer()
+Private Sub Timer_Control_Stock_Fechas_Salida_Timer() '############ migracion ################
     Dim precio As String
     Dim pcoste As String
     Dim pvpsiva As String
@@ -2788,7 +2789,7 @@ fin:
 End Sub
 
 
-Private Sub Timer_Productos_Criticos_Timer()
+Private Sub Timer_Productos_Criticos_Timer() '############ migrado ##########################3333
     Dim familia As String
     Dim pcoste As String
     Dim precioMed As String
@@ -2992,7 +2993,7 @@ Private Sub Timer_Productos_Criticos_Timer()
                         nombreLaboratorio = "<Sin Laboratorio>"
                     End If
                 End If
-          
+          '''''''''''''''''''''''''''''''
                 On Error GoTo errorProductosCriticos
         
                 sql = "select * from faltas where idPedido='" & rs2!IdPedido & "' AND idLinea= '" & rs2!IdLinea & "'"
@@ -3045,7 +3046,7 @@ fin:
 
 End Sub
 
-Private Sub Timer_Encargos_Timer()
+Private Sub Timer_Encargos_Timer() '''''''''''' Migrado ################################333
     Dim sql As String
     Dim idEncargo As String
     Dim cod_nacional As String
@@ -3302,7 +3303,7 @@ fin:
 
 End Sub
 
-Private Sub Timer_Familias_Timer()
+Private Sub Timer_Familias_Timer() '##############3 migrado ####################333333333333
     Dim sql As String
     
     Set rs = New ADODB.Recordset
@@ -3352,7 +3353,7 @@ errorFamilias:
 fin:
 End Sub
 
-Private Sub Timer_Control_Stock_Inicial_Timer()
+Private Sub Timer_Control_Stock_Inicial_Timer()    '############ migrado #########################3
     Dim precio As String
     Dim pcoste As String
     Dim pvpsiva As String
@@ -3874,7 +3875,7 @@ fin:
     
 End Sub
 
-Private Sub Timer_Control_Sin_Stock_Inicial_Timer()
+Private Sub Timer_Control_Sin_Stock_Inicial_Timer() '############# migrado #####################
     Dim precio As String
     Dim pcoste As String
     Dim pvpsiva As String
@@ -4213,7 +4214,7 @@ fin:
 End Sub
 
 
-Private Sub Timer_Listas_Timer()
+Private Sub Timer_Listas_Timer() '####### migrado #######################################3
     Dim sql As String
     
     Set rs = New ADODB.Recordset
@@ -4371,7 +4372,7 @@ fin:
     
 End Sub
 
-Private Sub Timer_Listas_Fechas_Timer()
+Private Sub Timer_Listas_Fechas_Timer() '################ migrado #############################
     Dim sql As String
     
     Set rs = New ADODB.Recordset
@@ -4458,7 +4459,7 @@ fin:
     
 End Sub
 
-Private Sub Timer_Categorias_PS_Timer()
+Private Sub Timer_Categorias_PS_Timer() '###################33 migrado ##############################
     Dim sql As String
     Dim padre As String
     Dim padreId As String
