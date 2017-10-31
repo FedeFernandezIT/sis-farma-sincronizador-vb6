@@ -5061,7 +5061,7 @@ Private Sub Timer_Pedidos_Timer() '''''''''''''''''''' Current +++++++++++++++++
         importePuc = Replace(rs5!importePuc, ",", ".")
         
         rs5.Close
-        
+        '############################# hasta aquí ########################
         If rs6.EOF And numLineas > 0 Then
             On Error GoTo errorPedidos
              
