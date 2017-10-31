@@ -4545,7 +4545,7 @@ errorCategoriasPs:
 fin:
 End Sub
 
-Private Sub Timer_Lista_Tienda_Timer()
+Private Sub Timer_Lista_Tienda_Timer() ''''''''''''''''''''''''' Migrado +++++++++++++++++++++++++++++++
     Dim precio As String
     Dim pcoste As String
     Dim pvpsiva As String
@@ -4874,7 +4874,7 @@ fin:
 
 End Sub
 
-Private Sub Timer_Pedidos_Timer()
+Private Sub Timer_Pedidos_Timer() '''''''''''''''''''' Current ++++++++++++++++++++++++++++++++
     Dim familia As String
     Dim pvp As String
     Dim puc As String
