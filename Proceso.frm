@@ -4874,7 +4874,7 @@ fin:
 
 End Sub
 
-Private Sub Timer_Pedidos_Timer() '''''''''''''''''''' Current ++++++++++++++++++++++++++++++++
+Private Sub Timer_Pedidos_Timer() '''''''''''''''''''' Migrado ++++++++++++++++++++++++++++++++
     Dim familia As String
     Dim pvp As String
     Dim puc As String
@@ -5061,7 +5061,7 @@ Private Sub Timer_Pedidos_Timer() '''''''''''''''''''' Current +++++++++++++++++
         importePuc = Replace(rs5!importePuc, ",", ".")
         
         rs5.Close
-        '############################# hasta aquí ########################
+        
         If rs6.EOF And numLineas > 0 Then
             On Error GoTo errorPedidos
              
@@ -5237,7 +5237,7 @@ errorPedidos:
 fin:
 End Sub
 
-Private Sub Timer_Sinonimos_Timer()
+Private Sub Timer_Sinonimos_Timer()	'################### migrado ##############################
     Dim sql As String
     
     Set rs = New ADODB.Recordset
@@ -5350,7 +5350,7 @@ fin:
     'procesarTimerSinonimos
 End Sub
 
-Private Sub Timer_Actualizar_Pendiente_Puntos_Timer()
+Private Sub Timer_Actualizar_Pendiente_Puntos_Timer() '#################333 current ##########################
     Dim sql As String
     
     Dim rs As ADODB.Recordset
