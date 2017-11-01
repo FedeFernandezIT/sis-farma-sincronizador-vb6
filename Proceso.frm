@@ -5350,7 +5350,7 @@ fin:
     'procesarTimerSinonimos
 End Sub
 
-Private Sub Timer_Actualizar_Pendiente_Puntos_Timer() '#################333 current ##########################
+Private Sub Timer_Actualizar_Pendiente_Puntos_Timer() '#################333 migrado ##########################
     Dim sql As String
     
     Dim rs As ADODB.Recordset
@@ -5487,7 +5487,7 @@ fin:
     'procesarTimerActualizarPP
 End Sub
 
-Private Sub Timer_Actualizar_Productos_Borrados_Timer()
+Private Sub Timer_Actualizar_Productos_Borrados_Timer() '################### current #########################
     Dim sql As String
     
     Set rs = New ADODB.Recordset
@@ -5582,7 +5582,7 @@ Private Sub Timer_Actualizar_Productos_Borrados_Timer()
             
         connMySql.Execute (sql)
     End If
-    
+    '######################### hasta aquí ############################################
     Do While Not rs.EOF
         DoEvents
         
