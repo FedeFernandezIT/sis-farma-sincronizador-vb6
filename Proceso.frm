@@ -5487,7 +5487,7 @@ fin:
     'procesarTimerActualizarPP
 End Sub
 
-Private Sub Timer_Actualizar_Productos_Borrados_Timer() '################### current #########################
+Private Sub Timer_Actualizar_Productos_Borrados_Timer() '################### migrado #########################
     Dim sql As String
     
     Set rs = New ADODB.Recordset
@@ -5623,7 +5623,7 @@ fin:
     'procesarTimerActualizarProductosBorrados
 End Sub
 
-Private Sub Timer_Actualizar_Entregas_Clientes_Timer()
+Private Sub Timer_Actualizar_Entregas_Clientes_Timer() '############# current ################
     Dim puesto As String
     Dim numero As String
     Dim dni As String
@@ -5674,7 +5674,7 @@ Private Sub Timer_Actualizar_Entregas_Clientes_Timer()
         sql = "SELECT * FROM entregas_clientes GROUP BY idventa ORDER BY idventa DESC LIMIT 0,1"
         
         rs7.Open sql, connMySql, adOpenDynamic, adLockBatchOptimistic
-        
+        '################## hasta aquí #####################################
         If rs7.EOF Then
             rs7.Close
             
